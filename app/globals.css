@@ -1,26 +1,55 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --spacing-common: 32px;
+  --spacing-common-x2: 64px;
+  --height-screen-minus-common-x2: calc(100vh - 64px);
+
+  /* font size */
+  --text-page-title: 36px;
+  --text-page-subtitle: 16px;
+  --text-section-title: 16px;
+  --text-card-title: 24px;
+  --text-card-body: 14px;
+  --text-card-bullet: 12px;
+  --text-card-label: 10px;
+
+  /* border width */
+  --border-width: 1px;
+
+  /* Light mode defaults */
+  --color-background: theme(colors.white);
+  --color-text: theme(colors.gray.900);
+  --color-primary: theme(colors.blue.500);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html.dark {
+  /* Dark mode overrides */
+  --color-background: theme(colors.gray.900);
+  --color-text: theme(colors.white);
+  --color-primary: theme(colors.blue.700);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    background-color: var(--color-background); /* Use the CSS variable */
+    color: var(--color-text); /* Use the CSS variable */
+    font-size: 14px;
+    font-family:
+      'Pretendard Variable',
+      Pretendard,
+      -apple-system,
+      BlinkMacSystemFont,
+      system-ui,
+      Roboto,
+      'Helvetica Neue',
+      'Segoe UI',
+      'Apple SD Gothic Neo',
+      'Noto Sans KR',
+      'Malgun Gothic',
+      'Apple Color Emoji',
+      'Segoe UI Emoji',
+      'Segoe UI Symbol',
+      sans-serif;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
