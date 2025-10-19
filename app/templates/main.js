@@ -8,6 +8,7 @@ import {
   ContianerContents,
   ContianerXlarge,
 } from '../components/containers'
+import { Ending } from '../components/contents/ending'
 import { MainImage } from '../components/contents/main_image'
 import { Section } from '../components/contents/section'
 import { Gap } from '../components/gap'
@@ -46,6 +47,7 @@ export function Main() {
           <Gap className="h-6"></Gap>
           <Section title="About"></Section>
           <Section title={isMaster ? 'Dots' : 'Timeline'}></Section>
+          <Ending></Ending>
         </ContainerContentsSmall>
       </ContianerContents>
     </ContianerXlarge>

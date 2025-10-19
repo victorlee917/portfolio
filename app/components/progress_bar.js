@@ -22,7 +22,7 @@ export function ProgressBar() {
   }, [])
 
   return (
-    <div className="absolute right-0 top-0 h-full w-[1px] bg-gray-700">
+    <div className="absolute right-0 top-0 h-full w-border bg-gray-700">
       <div
         className="h-full w-full bg-blue-800 origin-top"
         style={{ transform: `scaleY(${scrollPercentage / 100})` }}

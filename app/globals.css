@@ -3,6 +3,8 @@
 @theme {
   --spacing-common: 32px;
   --spacing-common-x2: 64px;
+  --spacing-box: 16px;
+  --border-common: 1px; /* Common border width */
   --height-screen-minus-common-x2: calc(100vh - 64px);
 
   /* font size */
@@ -13,9 +15,6 @@
   --text-card-body: 14px;
   --text-card-bullet: 12px;
   --text-card-label: 10px;
-
-  /* border width */
-  --border-width: 1px;
 
   /* Light mode defaults */
   --color-background: theme(colors.white);
@@ -51,5 +50,9 @@ html.dark {
       'Segoe UI Emoji',
       'Segoe UI Symbol',
       sans-serif;
+  }
+
+  .border-custom-width {
+    border-width: var(--border-common);
   }
 }
