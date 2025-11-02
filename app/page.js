@@ -6,7 +6,7 @@ export const metadata = {
   title: 'Home | Junwoo Lee',
   description: '이준우의 포트폴리오 홈페이지',
   alternates: {
-    canonical: 'https://yourwebsite.com', // TODO: 실제 도메인으로 변경 필요
+    canonical: 'https://junwoolee.me',
   },
 }
 

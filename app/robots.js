@@ -1,5 +1,5 @@
 export default function robots() {
-  const baseUrl = 'https://yourwebsite.com' // TODO: 실제 도메인으로 변경 필요
+  const baseUrl = 'https://junwoolee.me'
 
   return {
     rules: [

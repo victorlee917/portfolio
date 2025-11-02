@@ -6,7 +6,7 @@ import { Main } from '@/templates/main'
 export async function generateMetadata({ params }) {
   const { pathId } = await params
   const data = await getDotDataByPath(pathId)
-  const baseUrl = 'https://yourwebsite.com' // TODO: 실제 도메인으로 변경 필요
+  const baseUrl = 'https://junwoolee.me'
 
   if (!data) {
     return {

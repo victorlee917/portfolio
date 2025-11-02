@@ -4,7 +4,7 @@ import app from '@/firebase/config'
 const db = getFirestore(app)
 
 export default async function sitemap() {
-  const baseUrl = 'https://yourwebsite.com' // TODO: 실제 도메인으로 변경 필요
+  const baseUrl = 'https://junwoolee.me'
 
   try {
     // Fetch all dots documents from Firestore

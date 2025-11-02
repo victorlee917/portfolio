@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
         '@type': 'Person',
         name: '이준우',
         alternateName: 'Junwoo Lee',
-        url: 'https://yourwebsite.com', // TODO: 실제 도메인으로 변경
+        url: 'https://junwoolee.me',
         jobTitle: 'Developer',
         description: '이준우의 포트폴리오',
       },
@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
         '@type': 'WebSite',
         name: 'Junwoo Lee Portfolio',
         alternateName: '이준우 포트폴리오',
-        url: 'https://yourwebsite.com', // TODO: 실제 도메인으로 변경
+        url: 'https://junwoolee.me',
         description: '이준우에 대해 알아 보세요.',
         inLanguage: 'ko-KR',
       },
