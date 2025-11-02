@@ -56,7 +56,7 @@ export function CardProject({
           <GapHorizontal className={`w-[6px]`}></GapHorizontal>
           <h3 className="text-card-title">{title}</h3>
         </div>
-        <Gap className={`h-[16px]`}></Gap>
+        <Gap className={`h-[12px]`}></Gap>
         {masterYn ? (
           <>
             <h4 className="text-card-subtitle whitespace-pre-line">
