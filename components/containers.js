@@ -69,7 +69,7 @@ export function ContainerHeader({ children, className, ...props }) {
 export function ContianerXlarge({ children, className, ...props }) {
   return (
     <div
-      className={`flex p-common flex-col md:flex-row ${className || ''}`}
+      className={`flex p-mb-common md:p-common flex-col md:flex-row ${className || ''}`}
       {...props}
     >
       {children}

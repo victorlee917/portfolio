@@ -19,7 +19,7 @@ export function TopBar({ title, channelArray }) {
 
   return (
     <div
-      className={`w-full h-[60px] bg-background flex items-center fixed left-0 md:hidden px-common z-50 transition-transform duration-300 ${
+      className={`w-full h-[60px] bg-background flex items-center fixed left-0 md:hidden px-mb-common md:px-common z-50 transition-transform duration-300 ${
         isVisible ? 'top-0' : '-top-[60px]'
       }`}
     >
