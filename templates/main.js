@@ -65,7 +65,11 @@ export function Main({ headerData, contentsData, files }) {
           <ContainerHeaderSmallTop>
             {masterYn ? null : <BackButton></BackButton>}
             {masterYn ? (
-              <HeaderGreeting>{title}</HeaderGreeting>
+              <HeaderGreeting
+                koreanName="이준우"
+                englishName="Junwoo Lee"
+                chineseName="李俊雨"
+              />
             ) : (
               <HeaderTitle>{title}</HeaderTitle>
             )}

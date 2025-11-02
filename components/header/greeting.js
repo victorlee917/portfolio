@@ -2,34 +2,60 @@
 
 import React, { useState, useEffect, useMemo } from 'react'
 
-export function HeaderGreeting({ children }) {
+export function HeaderGreeting({ koreanName, englishName, chineseName }) {
   const [displayedText, setDisplayedText] = useState('')
+  const [currentTextIndex, setCurrentTextIndex] = useState(0)
 
-  // Memoize fullText to prevent unnecessary recalculations
-  const fullText = useMemo(() => `Hello I'm\n${children}`, [children])
+  // Multi-language greeting texts
+  const texts = useMemo(
+    () => [
+      `안녕하세요, 저는\n${koreanName}입니다.`,
+      `Hello I'm\n${englishName}.`,
+    ],
+    [koreanName, englishName]
+  )
 
   useEffect(() => {
     let currentIndex = 0
     let typingInterval
+    let deleteInterval
+    let pauseTimeout
 
-    // Reset animation when children changes
-    setDisplayedText('')
+    const currentText = texts[currentTextIndex]
 
+    // Typing animation
     typingInterval = setInterval(() => {
-      if (currentIndex <= fullText.length) {
-        setDisplayedText(fullText.slice(0, currentIndex))
+      if (currentIndex <= currentText.length) {
+        setDisplayedText(currentText.slice(0, currentIndex))
         currentIndex++
       } else {
         clearInterval(typingInterval)
+
+        // Pause for 2 seconds before deleting
+        pauseTimeout = setTimeout(() => {
+          let deleteIndex = currentText.length
+
+          // Delete animation
+          deleteInterval = setInterval(() => {
+            if (deleteIndex >= 0) {
+              setDisplayedText(currentText.slice(0, deleteIndex))
+              deleteIndex--
+            } else {
+              clearInterval(deleteInterval)
+              // Move to next text
+              setCurrentTextIndex((prev) => (prev + 1) % texts.length)
+            }
+          }, 80) // Delete speed
+        }, 2000) // Pause duration
       }
-    }, 100) // 100ms per character
+    }, 100) // Typing speed
 
     return () => {
-      if (typingInterval) {
-        clearInterval(typingInterval)
-      }
+      clearInterval(typingInterval)
+      clearInterval(deleteInterval)
+      clearTimeout(pauseTimeout)
     }
-  }, [fullText])
+  }, [currentTextIndex, texts])
 
   return (
     <h1 className="text-page-title whitespace-pre-line">

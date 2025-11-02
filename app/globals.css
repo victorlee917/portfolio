@@ -197,7 +197,7 @@ html.dark {
     color: var(--color-text); /* Use the CSS variable */
     font-size: 14px;
     font-family:
-      var(--font-outfit), 'Pretendard Variable', Pretendard, sans-serif;
+      var(--font-outfit), 'Pretendard JP Variable', Pretendard, sans-serif;
   }
 
   /* The .no-scrollbar class can still be used for specific elements if needed */
