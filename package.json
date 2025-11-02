@@ -6,9 +6,13 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "security:check": "npm audit --audit-level=moderate",
+    "security:fix": "npm audit fix",
+    "precommit": "git diff --cached --name-only | grep -E '\\.env' && echo '⚠️  WARNING: .env file detected in commit!' && exit 1 || exit 0"
   },
   "dependencies": {
+    "firebase": "^12.4.0",
     "next": "15.5.6",
     "react": "19.1.0",
     "react-dom": "19.1.0"
