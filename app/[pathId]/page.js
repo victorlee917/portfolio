@@ -3,6 +3,8 @@ import { getDotDataByPath } from '@/lib/firestore'
 import { getFilesByName } from '@/lib/storage'
 import { Main } from '@/templates/main'
 
+export const dynamic = 'force-dynamic'
+
 export async function generateMetadata({ params }) {
   const { pathId } = await params
   const data = await getDotDataByPath(pathId)
