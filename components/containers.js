@@ -58,7 +58,7 @@ export function ContainerHeaderSmallBottom({ children, className, ...props }) {
 export function ContainerHeader({ children, className, ...props }) {
   return (
     <div
-      className={`w-full md:w-[40%] h-[320px] md:h-screen-minus-common-x2 flex justify-center md:justify-end md:sticky md:top-common ${className || ''}`}
+      className={`w-full md:w-[40%] h-[360px] md:h-screen-minus-common-x2 flex justify-center md:justify-end md:sticky md:top-common ${className || ''}`}
       {...props}
     >
       {children}
