@@ -11,7 +11,10 @@ export function BackButton() {
   const router = useRouter()
   const { theme } = useTheme()
   return (
-    <button onClick={() => router.back()} className="w-[24px] mb-[24px]">
+    <button
+      onClick={() => router.back()}
+      className="hidden md:flex w-[24px] mb-[24px]"
+    >
       <Image
         alt="Go Back"
         src={theme === 'dark' ? BackBigDark : BackBig}
