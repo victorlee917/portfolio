@@ -10,6 +10,33 @@ const outfit = Outfit({
 export const metadata = {
   title: 'Junwoo Lee | 이준우',
   description: '이준우에 대해 알아 보세요.',
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/apple-icon.png',
+  },
+  openGraph: {
+    title: 'Junwoo Lee | 이준우',
+    description: '이준우에 대해 알아 보세요.',
+    url: 'https://junwoolee.me',
+    siteName: 'About Junwoo Lee ',
+    images: [
+      {
+        url: '/og-image.png', // 1200x630px 권장
+        width: 1200,
+        height: 630,
+        alt: 'About Junwoo Lee',
+      },
+    ],
+    locale: 'ko_KR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Junwoo Lee | 이준우',
+    description: '이준우의 포트폴리오',
+    images: ['/og-image.png'],
+  },
 }
 
 export default function RootLayout({ children }) {
@@ -67,7 +94,10 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${outfit.variable} antialiased`} suppressHydrationWarning>
+      <body
+        className={`${outfit.variable} antialiased`}
+        suppressHydrationWarning
+      >
         {' '}
         {/* Apply Outfit font */}
         <ThemeProvider>{children}</ThemeProvider>
