@@ -61,7 +61,7 @@ export function Main({ headerData, contentsData, files }) {
     <ContianerXlarge>
       <ContainerHeader>
         <TopBar title={title} channelArray={channelArray}></TopBar>
-        <ContainerHeaderSmall>
+        <ContainerHeaderSmall className="hidden md:flex">
           <ContainerHeaderSmallTop>
             {masterYn ? null : <BackButton></BackButton>}
             {masterYn ? (
@@ -78,6 +78,25 @@ export function Main({ headerData, contentsData, files }) {
             <HeaderCopyRight>junwoolee.me</HeaderCopyRight>
             <ThemeToggle></ThemeToggle>
           </ContainerHeaderSmallBottom>
+        </ContainerHeaderSmall>
+
+        <ContainerHeaderSmall className="md:hidden">
+          <ContainerHeaderSmallBottom>
+            <HeaderCopyRight>junwoolee.me</HeaderCopyRight>
+            <ThemeToggle></ThemeToggle>
+          </ContainerHeaderSmallBottom>
+          <ContainerHeaderSmallTop>
+            {masterYn ? null : <BackButton></BackButton>}
+            {masterYn ? (
+              <HeaderGreeting>Junwoo Lee</HeaderGreeting>
+            ) : (
+              <HeaderTitle>{title}</HeaderTitle>
+            )}
+            <Gap className={`h-[10px]`}></Gap>
+            <HeaderSubtitle>{subtitle}</HeaderSubtitle>
+            <Gap className={`h-[24px]`}></Gap>
+            <Channels channels={channelArray}></Channels>
+          </ContainerHeaderSmallTop>
         </ContainerHeaderSmall>
         <ProgressBar></ProgressBar>
       </ContainerHeader>

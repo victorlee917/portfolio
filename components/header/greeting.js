@@ -26,7 +26,7 @@ export function HeaderGreeting({ children }) {
   }, [children])
 
   return (
-    <h1 className="text-page-title whitespace-pre-line mt-[16px] md:mt-0">
+    <h1 className="text-page-title whitespace-pre-line">
       {displayedText}
       <span className="animate-blink text-[32px]"> _</span>
     </h1>

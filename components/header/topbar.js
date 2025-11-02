@@ -7,7 +7,7 @@ import { useScroll, useScrollThreshold } from '@/lib/hooks'
 export function TopBar({ title, channelArray }) {
   const [mounted, setMounted] = useState(false)
   const { scrollPercentage } = useScroll()
-  const isVisible = useScrollThreshold(220)
+  const isVisible = useScrollThreshold(320)
 
   useEffect(() => {
     setMounted(true)

@@ -3,7 +3,7 @@ import React from 'react'
 export function ContainerContentsSmall({ children, className, ...props }) {
   return (
     <div
-      className={`mx-auto w-full max-w-screen-sm flex flex-col ${className || ''}`}
+      className={`mx-auto w-full md:max-w-screen-sm flex flex-col ${className || ''}`}
       {...props}
     >
       {children}
@@ -14,7 +14,7 @@ export function ContainerContentsSmall({ children, className, ...props }) {
 export function ContianerContents({ children, className, ...props }) {
   return (
     <div
-      className={`w-full md:w-[60%] flex justify-start md:p-common mt-[50px] md:mt-0 ${className || ''}`}
+      className={`w-full md:w-[60%] flex justify-start md:p-common mt-[24px] md:mt-0 ${className || ''}`}
       {...props}
     >
       {children}
@@ -25,7 +25,7 @@ export function ContianerContents({ children, className, ...props }) {
 export function ContainerHeaderSmall({ children, className, ...props }) {
   return (
     <div
-      className={`flex h-full w-full max-w-[500px] justify-between flex-col relative md:p-common ${className || ''}`}
+      className={`flex flex-col h-full w-full md:max-w-[500px] justify-between relative md:p-common ${className || ''}`}
       {...props}
     >
       {children}
@@ -36,7 +36,7 @@ export function ContainerHeaderSmall({ children, className, ...props }) {
 export function ContainerHeaderSmallTop({ children, className, ...props }) {
   return (
     <div
-      className={`flex h-full w-full flex-col items-start ${className || ''}`}
+      className={`flex w-full flex-col items-start ${className || ''}`}
       {...props}
     >
       {children}
@@ -58,7 +58,7 @@ export function ContainerHeaderSmallBottom({ children, className, ...props }) {
 export function ContainerHeader({ children, className, ...props }) {
   return (
     <div
-      className={`w-full md:w-[40%] h-[320px] md:h-screen-minus-common-x2 flex md:justify-end md:sticky md:top-common ${className || ''}`}
+      className={`w-full md:w-[40%] h-[320px] md:h-screen-minus-common-x2 flex justify-center md:justify-end md:sticky md:top-common ${className || ''}`}
       {...props}
     >
       {children}
