@@ -36,7 +36,7 @@ export function CardProject({
       className={`w-full flex-col border-custom-width border-solid border-[var(--color-border)] ${masterYn ? 'md:hover:border-[var(--color-hover)] md:hover:cursor-pointer' : ''}`}
     >
       {masterYn ? null : (
-        <div className="flex w-full justify-between bg-background-hard border-b-[var(--color-border)] border-b-custom-width px-box py-2">
+        <div className="flex w-full justify-between bg-background-hard border-b-[var(--color-border)] border-b-custom-width px-mb-box md:px-box py-2">
           <div className="text-card-header">{date}</div>
           <div className="text-card-header">{`${order}/${length}`}</div>
         </div>
@@ -49,7 +49,7 @@ export function CardProject({
         ></ImageFrame>
       ) : null}
       <div
-        className={`w-full p-box ${image ? 'border-t-custom-width border-solid border-[var(--color-border)]' : ''}`}
+        className={`w-full p-mb-box md:p-box ${image ? 'border-t-custom-width border-solid border-[var(--color-border)]' : ''}`}
       >
         <div className="flex items-center">
           <div className="bg-dot w-[5px] h-[16px]"></div>
@@ -70,7 +70,7 @@ export function CardProject({
         )}
         {masterYn ? (
           <>
-            <Border className={'mt-box mb-box'}></Border>
+            <Border className={'my-mb-box md:my-box'}></Border>
             <div className="flex items-center">
               <span className="text-card-recent">최근 소식</span>
               <div className="h-[12px] mx-2 w-border bg-border"></div>
@@ -78,18 +78,18 @@ export function CardProject({
               <GapHorizontal className="w-1"></GapHorizontal>
               <span className="text-card-label">{lastUpdate.date}</span>
             </div>
-            <Gap className={`mb-box`}></Gap>
+            <Gap className={`mb-mb-box md:mb-box`}></Gap>
             <Tags tags={tags}></Tags>
           </>
         ) : (
           <>
             {' '}
-            <Gap className={`mb-box`}></Gap>
+            <Gap className={`mb-mb-box md:mb-box`}></Gap>
             <Tags tags={tags}></Tags>
             {channelArray.length > 0 ? (
               <>
                 {' '}
-                <Border className={'mt-box mb-box'}></Border>
+                <Border className={'my-mb-box md:my-box'}></Border>
                 <Channels channels={channelArray}></Channels>
               </>
             ) : null}

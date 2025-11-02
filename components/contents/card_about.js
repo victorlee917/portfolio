@@ -4,7 +4,7 @@ import { Bullets } from './bullets'
 
 export function CardAbout({ introArray, tagsArray }) {
   return (
-    <div className="w-full flex flex-col p-box border-custom-width border-solid border-[var(--color-border)] gap-5">
+    <div className="w-full flex flex-col p-mb-box md:p-box border-custom-width border-solid border-[var(--color-border)] gap-5">
       {introArray.map((intro, index) => (
         <div key={index} className="flex flex-col">
           <span className="text-card-category">{intro.type}</span>
