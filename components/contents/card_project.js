@@ -78,8 +78,13 @@ export function CardProject({
               <GapHorizontal className="w-1"></GapHorizontal>
               <span className="text-card-label">{lastUpdate.date}</span>
             </div>
-            <Gap className={`mb-mb-box md:mb-box`}></Gap>
-            <Tags tags={tags}></Tags>
+            {tags ? (
+              <>
+                {' '}
+                <Gap className={`mb-mb-box md:mb-box`}></Gap>
+                <Tags tags={tags}></Tags>
+              </>
+            ) : null}
           </>
         ) : (
           <>

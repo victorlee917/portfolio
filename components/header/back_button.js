@@ -13,7 +13,7 @@ export function BackButton() {
   return (
     <button
       onClick={() => router.back()}
-      className="hidden md:flex w-[24px] mb-[24px]"
+      className="hidden md:flex w-[24px] mb-[24px] cursor-pointer"
     >
       <Image
         alt="Go Back"

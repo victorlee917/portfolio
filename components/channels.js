@@ -25,7 +25,7 @@ export function Channels({ channels }) {
   return (
     <div className="flex gap-3 ">
       {channels.map((channel, index) => (
-        <Link key={index} href={channel.url}>
+        <Link key={index} href={channel.url} target="_blank">
           <div className="group flex justify-center items-center w-[28px] h-[28px] border-custom-width border-solid border-[var(--color-border)] md:hover:border-[var(--color-hover)]">
             <Image
               alt="abd"

@@ -6,7 +6,7 @@ export function HeaderGreeting({ children }) {
   const [displayedText, setDisplayedText] = useState('')
 
   useEffect(() => {
-    const text = `Hello I'm\n${children}.`
+    const text = `Hello I'm\n${children}`
     let currentIndex = 0
     let typingInterval
 
