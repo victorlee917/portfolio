@@ -22,6 +22,8 @@ import { HeaderTitle } from '../components/header/title'
 import { ProgressBar } from '../components/progress_bar'
 import { ThemeToggle } from '../components/header/theme_toggle' // Import ThemeToggle
 import { HeaderGreeting } from '@/components/header/greeting'
+import { Album } from '@/components/contents/album'
+import { CardPhoto } from '@/components/contents/card_photo'
 
 /**
  * Aggregates all tags from contentsData and returns them sorted by frequency (descending)
@@ -54,7 +56,15 @@ function aggregateTagsByFrequency(contentsData) {
 }
 
 export function Main({ headerData, contentsData, files }) {
-  const { masterYn, title, subtitle, channelArray, introArray } = headerData
+  const {
+    masterYn,
+    title,
+    subtitle,
+    channelArray,
+    introArray,
+    contentsFullYn,
+    contentsType,
+  } = headerData
   const tagsArray = aggregateTagsByFrequency(contentsData)
 
   return (
@@ -101,36 +111,72 @@ export function Main({ headerData, contentsData, files }) {
         <ProgressBar></ProgressBar>
       </ContainerHeader>
       <ContianerContents>
-        <ContainerContentsSmall>
-          <MainImage image={files['main']}></MainImage>
-          <Gap className="h-6"></Gap>
-          <Section title="About">
-            <CardAbout
-              introArray={introArray}
-              tagsArray={tagsArray}
-            ></CardAbout>
-          </Section>
-          <Gap className={`h-6`}></Gap>
-          <Section title={masterYn ? 'Dots' : 'Timeline'}>
-            {contentsData.map((content, index) => (
-              <CardProject
-                image={masterYn ? files[content.id] : files[content.order]}
-                masterYn={masterYn}
-                key={index}
-                title={content.title}
-                subTitle={content.subtitle}
-                lastUpdate={content.lastUpdate}
-                desc={content.desc}
-                tags={content.tags}
-                date={content.date}
-                ratio={content.ratio}
-                channelArray={content.channelArray}
-                order={content.order}
-                length={contentsData.length}
-                path={content.path}
-              ></CardProject>
-            ))}
-          </Section>
+        <ContainerContentsSmall contentsFullYn={contentsFullYn}>
+          {contentsFullYn ? null : (
+            <>
+              <MainImage image={files['main']}></MainImage>
+              <Gap className="h-6"></Gap>
+            </>
+          )}
+          {introArray.length === 0 && tagsArray.length === 0 ? null : (
+            <>
+              <Section title="About">
+                <CardAbout
+                  introArray={introArray}
+                  tagsArray={tagsArray}
+                ></CardAbout>
+              </Section>
+              <Gap className={`h-6`}></Gap>
+            </>
+          )}
+          {contentsData.length > 0 ? (
+            contentsType === 'project' ? (
+              <Section title={masterYn ? 'Dots' : 'Timeline'}>
+                {contentsData.map((content, index) => (
+                  <CardProject
+                    image={masterYn ? files[content.id] : files[content.order]}
+                    masterYn={masterYn}
+                    key={index}
+                    title={content.title}
+                    subTitle={content.subtitle}
+                    lastUpdate={content.lastUpdate}
+                    desc={content.desc}
+                    tags={content.tags}
+                    date={content.date}
+                    ratio={content.ratio}
+                    channelArray={content.channelArray}
+                    order={content.order}
+                    length={contentsData.length}
+                    path={content.path}
+                  ></CardProject>
+                ))}
+              </Section>
+            ) : (
+              <Album>
+                {contentsData.map((content, index) => {
+                  // Extract only serializable metadata fields
+                  const metadata = {
+                    thumbnailWidth: content.metadata?.thumbnailWidth,
+                    thumbnailHeight: content.metadata?.thumbnailHeight,
+                  }
+
+                  return (
+                    <CardPhoto
+                      key={index}
+                      title={content.title}
+                      date={content.date}
+                      metadata={metadata}
+                      order={content.order}
+                      length={contentsData.length}
+                      thumbnailImage={files[content.order + '_thumb']}
+                      originalImage={files[content.order]}
+                    ></CardPhoto>
+                  )
+                })}
+              </Album>
+            )
+          ) : null}
+
           <Gap className={`h-6`}></Gap>
           <Ending></Ending>
         </ContainerContentsSmall>

@@ -1,9 +1,14 @@
 import React from 'react'
 
-export function ContainerContentsSmall({ children, className, ...props }) {
+export function ContainerContentsSmall({
+  children,
+  className,
+  contentsFullYn = false,
+  ...props
+}) {
   return (
     <div
-      className={`mx-auto w-full md:max-w-screen-sm flex flex-col ${className || ''}`}
+      className={`mx-auto w-full flex flex-col ${className || ''} ${contentsFullYn ? '' : 'md:max-w-screen-sm '} `}
       {...props}
     >
       {children}

@@ -3,7 +3,7 @@ import { Gap, GapHorizontal } from '../gap'
 
 export function Section({ title, children }) {
   return (
-    <section className="flex-col">
+    <section className="w-full flex-col">
       <div className="flex items-center">
         <div className="w-[7px] h-[7px] bg-dot"></div>
         <GapHorizontal className={`w-[5px]`}></GapHorizontal>

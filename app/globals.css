@@ -332,4 +332,24 @@ html.dark {
   .animate-blink {
     animation: blink 1s ease-in-out infinite;
   }
+
+  /* Masonry Grid Styles */
+  .album-masonry-grid {
+    display: flex;
+    margin-left: calc(var(--spacing-box) * -1);
+    width: auto;
+  }
+
+  .album-masonry-grid_column {
+    padding-left: var(--spacing-box);
+    background-clip: padding-box;
+  }
+
+  .album-masonry-grid_column > * {
+    margin-bottom: var(--spacing-box);
+  }
+
+  .album-masonry-grid_column > *:last-child {
+    margin-bottom: 0;
+  }
 }
