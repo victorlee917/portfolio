@@ -18,7 +18,7 @@ export function CardPhoto({
   return (
     <>
       <div
-        className={`w-full p-mb-box md:p-box flex-col border-custom-width border-solid border-[var(--color-border)] md:hover:border-[var(--color-hover)] md:hover:cursor-pointer`}
+        className={`w-full p-mb-box md:p-box flex-col border-custom-width border-solid border-[var(--color-border)]`}
       >
         <Image
           src={thumbUrl}

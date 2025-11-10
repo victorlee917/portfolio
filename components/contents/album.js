@@ -7,7 +7,7 @@ export function Album({ children, breakpointCols }) {
   // Default responsive breakpoints
   const defaultBreakpoints = {
     default: 3,
-    1920: 2,
+    1280: 2,
     640: 1,
   }
 
